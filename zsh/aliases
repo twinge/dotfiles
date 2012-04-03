@@ -76,6 +76,14 @@ alias rgemi="rbx -S gem install --no-rdoc --no-ri"
 alias gemi="gem install --no-rdoc --no-ri" #" -p http://proxy.ccci.org:8080"
 alias minify="java -jar ~josh/yuicompressor-2.3.6.jar"
 
+# ubuntu aliases
+alias free="free -m"
+alias update="sudo aptitude update"
+alias install="sudo aptitude install"
+alias upgrade="sudo aptitude safe-upgrade"
+alias remove="sudo aptitude remove"
+alias search="sudo aptitude search"
+alias gemi="sudo gem install --no-ri --no-rdoc"
 
 # git commands
 alias gs="git status"
