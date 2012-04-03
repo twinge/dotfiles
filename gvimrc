@@ -1,6 +1,12 @@
-set guioptions-=T " hide toolbar
-set lines=55 columns=100
+if filereadable(expand("~/.gvimrc.before"))
+  source ~/.gvimrc.before
+endif
 
-colorscheme railscasts
+" CtrlP OS-X Menu remapping
+if janus#is_plugin_enabled('ctrlp') && has("gui_macvim")
+  macmenu &File.New\ Tab key=<D-S-t>
+endif
 
-set guifont=DejaVu\ Sans\ Mono:h13
+if filereadable(expand("~/.gvimrc.after"))
+  source ~/.gvimrc.after
+endif

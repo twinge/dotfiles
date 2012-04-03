@@ -4,30 +4,114 @@ alias ..='cd ..'
 # ls
 alias ls="ls -F"
 alias l="ls -lAh"
-alias ll="ls -l"
+alias ll="ls -lha"
 alias la='ls -A'
 
-# git
-alias gl='git pull'
-alias gp='git push'
-alias gd='git diff'
-alias gc='git commit'
-alias gca='git commit -a'
-alias gco='git checkout'
-alias gb='git branch'
-alias gs='git status'
-alias grm="git status | grep deleted | awk '{print \$3}' | xargs git rm"
-alias changelog='git log `git log -1 --format=%H -- CHANGELOG*`..; cat CHANGELOG*'
+alias ssh40="ssh joshstarcher@hart-w040.uscm.org -p 40022"
+alias ssh25="ssh joshstarcher@hart-w025.uscm.org -p 40022"
+alias ssh35="ssh joshstarcher@hart-w035.uscm.org -p 40022"
+alias ssh26="ssh 10.10.11.166 -p 40022 -l joshstarcher"
+alias ssh27="ssh 10.10.11.167 -p 40022 -l joshstarcher"
+alias ssh34="ssh joshstarcher@git.uscm.org"
+alias ssh51="ssh 10.10.11.50 -l joshstarcher -p 40022"
+alias mpdxdb="ssh 10.10.200.55 -l joshstarcher -p 40022"
+alias mpdxw="ssh 10.10.200.50 -l joshstarcher -p 40022"
+alias ttp="ssh 50.56.69.90 -p 40022"
+alias cccmt="ssh josh@campuscrusadeforchrist.com -p 40022"
+alias slice="ssh josh@67.207.128.37 -p 40022"
+alias sliced="ssh josh@67.207.128.99 -p 40022"
+alias slicemh="ssh josh@67.207.137.201 -p 40022"
+alias slicec="ssh josh@209.20.64.17 -p 40022"
+alias slicei="ssh josh@209.20.64.77 -p 40022"
+alias sliceg="ssh josh@209.20.70.53 -p 40022"
+alias flo="ssh 50.56.202.241 -p 40022"
+alias clients="ssh josh@209.20.70.226"
+alias xcp="ssh josh@67.207.148.65 -p 40022"
+alias cec="ssh hq.cltv8.com -l root"
+alias cultivate="ssh 69.162.114.2 -p 40022"
+alias rack="ssh 98.129.25.162 -l josh"
+alias ttposc="ssh 50.56.77.203 -l josh -p 40022"
+alias new="ssh 69.162.114.10"
+alias pds="ssh 10.1.50.51 -l root"
+alias pg="ps ax | grep "
+alias r="rake test:coverage SHOW_ONLY=h,c,m"
+alias s="bundle exec rspec spec"
+alias dingle="ssh -c 3des -2 -l serveradmin@26amserver.com list.dingleit.com -p 22"
+alias mt="ssh 26am.com -l serveradmin@26am.com"
+alias straw="ssh -c 3des -2 -l joshstarcher 64.13.229.123 -p 22"
+alias cdd="cd /Users/josh/htdocs/dingleit.com/html"
+alias 1="ssh u35403720@74.208.16.22"
+alias vox="ssh 216.154.208.141 -l webadmin"
+alias canada="ssh 72.2.49.82 -l josh"
+alias creative="ssh 67.23.4.94 -l josh"
+alias cdb="ssh 69.162.86.130"
+alias cw="ssh 69.162.113.66"
+alias highend="ssh 216.115.236.86 -l josh668"
+alias kwik="ssh kwikski.net -l u41884929"
+alias h3d="ssh dev.highend3d.com"
+alias t="tail -f -n 100"
 
-# rails
-alias sc='script/console'
-alias ss='script/server'
-alias sg='script/generate'
-alias a='autotest -rails'
-alias tlog='tail -f log/development.log'
-alias scaffold='script/generate nifty_scaffold'
-alias migrate='rake db:migrate db:test:clone'
-alias rst='touch tmp/restart.txt'
+# Mongrel commands
+alias ms="mongrel_rails start -d"
+#alias ms="mongrel_rails start -d -S config/mongrel_upload_progress.conf"
+alias msc="mongrel_rails start -d -p 3001 -S config/mongrel_upload_progress.conf"
+alias mh="mongrel_rails stop"
+alias mr="mongrel_rails restart"
+alias mds="mongrel_rails start -C /Users/josh/htdocs/dingleit.com/dingler/config/mongrel.yml"
+alias mdh="mongrel_rails stop -P /Users/josh/htdocs/dingleit.com/dingler/log/mongrel.pid"
+alias mdr="mongrel_rails restart -P /Users/josh/htdocs/dingleit.com/dingler/log/mongrel.pid"
 
-# commands starting with % for pasting from web
-alias %=' '
+#svn commands
+alias svns="svn status"
+alias svnsg="svn status | grep "
+alias svnn="svn status | grep \?"
+alias svnc="svn status | grep C"
+alias svna="svn add app/* spec/* db/migrate/* --force"
+
+alias lsws="sudo /usr/local/lsws/bin/lswsctrl restart"
+alias mat="mate"
+alias mage="mate"
+alias sgemi="sudo gem install --no-rdoc --no-ri"
+alias rgemi="rbx -S gem install --no-rdoc --no-ri"
+alias gemi="gem install --no-rdoc --no-ri" #" -p http://proxy.ccci.org:8080"
+alias minify="java -jar ~josh/yuicompressor-2.3.6.jar"
+
+
+# git commands
+alias gs="git status"
+alias gc="git commit -a -v"
+alias gb="git branch"
+alias gba="git branch -a"
+alias gd="git diff | mate"
+alias gl="git pull; git submodule update"
+alias gp="git push"
+alias gph="git push heroku master"
+alias go="git checkout"
+alias ga="git add ."
+alias gitk="gitk --all &"
+alias large="sudo find / -size +102400000c -exec du -h {} \;"
+alias ar="sudo apachectl graceful"
+alias perm="sudo chown -R josh *"
+alias new_rails="rails newapp -m http://www.railsboost.com/629.rb"
+alias stage="ssh 173.45.229.44 -l josh.starcher"
+alias csd="cap staging deploy"
+alias cfd="cap fast deploy"
+alias cpd="cap production deploy"
+alias redis="redis-server /usr/local/etc/redis.conf"
+
+alias old_dump="mysqldump -h  192.168.4.199 -u root -proot --add-drop-database"
+
+alias git="hub"
+alias rn="echo -d mysql --edge -J"
+alias cap="bundle exec cap"
+
+alias old="rvm ree"
+alias post="postgres -D /usr/local/var/postgres"
+
+alias b="bundle"
+alias bi="b install --path vendor"
+alias bu="b update"
+alias be="b exec"
+alias binit="bi && b package && echo 'vendor/ruby' >> .gitignore"
+
+alias u="be unicorn --config-file config/unicorn.development.rb"

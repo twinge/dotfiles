@@ -6,6 +6,18 @@ begin
 rescue LoadError
 end
 
+# Display the RAILS ENV in the prompt
+# ie : [Development]>> 
+IRB.conf[:PROMPT][:CUSTOM] = {
+ :PROMPT_N => "[#{ENV["RAILS_ENV"].capitalize}]>> ",
+ :PROMPT_I => "[#{ENV["RAILS_ENV"].capitalize}]>> ",
+ :PROMPT_S => nil,
+ :PROMPT_C => "?> ",
+ :RETURN => "=> %s\n"
+ }
+# Set default prompt
+IRB.conf[:PROMPT_MODE] = :CUSTOM
+
 def change_log(stream)
   ActiveRecord::Base.logger = Logger.new(stream)
   ActiveRecord::Base.clear_active_connections!
