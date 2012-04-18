@@ -15,3 +15,4 @@ export PS1="\[\033[1;33m\]\w\[\033[0m\]$ "
 if [ -f ~/.localrc ]; then
   source ~/.localrc
 fi
+export PS1="\[\033[0;35m\]\u@\h\[\033[0;33m\] \w\[\033[00m\]: "
