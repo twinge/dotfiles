@@ -121,7 +121,7 @@ alias old="rvm ree"
 alias post="postgres -D /usr/local/var/postgres"
 
 alias b="bundle"
-alias bi="b install --path vendor"
+alias bi="b install --path vendor --without=production"
 alias bu="b update"
 alias be="b exec"
 alias binit="bi && b package && echo 'vendor/ruby' >> .gitignore"
