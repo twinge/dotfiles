@@ -1,0 +1,12 @@
+#!/bin/bash
+EXPECTED_ARGS=1
+if [ $# -ne $EXPECTED_ARGS ]; then
+  echo "Missing branch name"
+  exit
+fi
+git pull
+git checkout $1
+git pull
+git checkout master
+git merge $1
+git push

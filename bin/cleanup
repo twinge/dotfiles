@@ -1,0 +1,13 @@
+#!/bin/bash
+EXPECTED_ARGS=1
+if [ $# -ne $EXPECTED_ARGS ]; then
+  echo "Missing branch name"
+  exit
+fi
+if [ $1 = 'master' ]; then
+  echo "Can't delete the master branch"
+  exit
+fi
+git checkout master
+git branch -d $1
+git push origin :$1
