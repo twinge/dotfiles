@@ -74,6 +74,10 @@ __git_ps1 ()
 	fi
 }
 
+__parse_git_branch() {
+  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/[\1$(parse_git_dirty)]/"
+}
+
 __gitcomp ()
 {
 	local all c s=$'\n' IFS=' '$'\t'$'\n'
