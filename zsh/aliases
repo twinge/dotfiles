@@ -1,5 +1,9 @@
 # cd
 alias ..='cd ..'
+alias cdint='cd /var/www/html/integration'
+alias cdprod='cd /var/www/html/production'
+alias cdmh='cd /var/www/html/production/mh'
+alias cdinf='cd /var/www/html/production/infobase'
 
 # ls
 alias ls="ls -F"
