@@ -1,5 +1,9 @@
 # cd
 alias ..='cd ..'
+alias cdint='cd /var/www/html/integration'
+alias cdprod='cd /var/www/html/production'
+alias cdmh='cd /var/www/html/production/mh'
+alias cdinf='cd /var/www/html/production/infobase'
 
 # ls
 alias ls="ls -F"
@@ -8,7 +12,7 @@ alias ll="ls -lha"
 alias la='ls -A'
 
 # Servers
-alias ssh40="ssh 10.10.200.40 -p 40022"
+alias ssh40="ssh joshstarcher@10.10.200.40 -p 40022"
 alias ssh25="ssh joshstarcher@hart-w025.uscm.org -p 40022"
 alias ssh35="ssh joshstarcher@hart-w035.uscm.org -p 40022"
 alias ssh26="ssh 10.10.11.166 -p 40022 -l joshstarcher"
