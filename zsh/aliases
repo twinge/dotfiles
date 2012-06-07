@@ -13,8 +13,8 @@ alias la='ls -A'
 
 # Servers
 alias ssh40="ssh joshstarcher@10.10.200.40 -p 40022"
-alias ssh25="ssh joshstarcher@hart-w025.uscm.org -p 40022"
-alias ssh35="ssh joshstarcher@hart-w035.uscm.org -p 40022"
+alias ssh25="ssh joshstarcher@172.16.1.25 -p 40022"
+alias ssh35="ssh joshstarcher@172.16.1.35 -p 40022"
 alias ssh26="ssh 10.10.11.166 -p 40022 -l joshstarcher"
 alias ssh27="ssh 10.10.11.167 -p 40022 -l joshstarcher"
 alias ssh34="ssh joshstarcher@git.uscm.org"
