@@ -64,16 +64,6 @@ alias s="bundle exec rspec spec"
 alias cdd="cd /Users/josh/htdocs/dingleit.com/html"
 alias t="tail -f -n 100"
 
-# Mongrel commands
-alias ms="mongrel_rails start -d"
-#alias ms="mongrel_rails start -d -S config/mongrel_upload_progress.conf"
-alias msc="mongrel_rails start -d -p 3001 -S config/mongrel_upload_progress.conf"
-alias mh="mongrel_rails stop"
-alias mr="mongrel_rails restart"
-alias mds="mongrel_rails start -C /Users/josh/htdocs/dingleit.com/dingler/config/mongrel.yml"
-alias mdh="mongrel_rails stop -P /Users/josh/htdocs/dingleit.com/dingler/log/mongrel.pid"
-alias mdr="mongrel_rails restart -P /Users/josh/htdocs/dingleit.com/dingler/log/mongrel.pid"
-
 #svn commands
 alias svns="svn status"
 alias svnsg="svn status | grep "
