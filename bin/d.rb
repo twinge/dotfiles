@@ -1,8 +1,6 @@
 #!/usr/bin/env ruby
-unless ARGV[0]
-  puts "Bad environment argument (use 'p' or 's')"
-  exit
-end
+path = ARGV.shift
+
 case ARGV[0]
 when 's'
   env = 'staging'
@@ -22,8 +20,10 @@ app ||= ARGV[1]
 branch ||= ARGV[2]
 
 unless app
-  puts "You have to specify which app you'd like to deploy" 
-  exit
+  # try to guess app based on current directory
+  app = path.split('/').last
+  #puts "You have to specify which app you'd like to deploy" 
+  #exit
 end
 
 cmd = "bundle exec cap #{app}:#{env} deploy"

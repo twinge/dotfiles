@@ -1,4 +1,5 @@
 #!/bin/bash
+CURRENT=`pwd`
 cd $DEPLOY_APP
-d.rb $1 $2 $3
+d.rb "$CURRENT" $1 $2 $3
 
