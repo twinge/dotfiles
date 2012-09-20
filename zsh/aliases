@@ -86,7 +86,10 @@ alias gp="git push"
 alias gph="git push heroku master"
 alias go="git checkout"
 alias ga="git add ."
+alias gw='git whatchanged -p --abbrev-commit --pretty=medium'
 alias gitk="gitk --all &"
+
+# misc
 alias large="sudo find / -size +102400000c -exec du -h {} \;"
 alias ar="sudo apachectl graceful"
 alias perm="sudo chown -R josh *"
