@@ -67,7 +67,7 @@ function! CorrectTestRunner()
   if match(expand('%'), '\.feature$') != -1
     return "!cucumber"
   elseif match(expand('%'), '_spec\.rb$') != -1
-    return "!bundle exec rspec --drb --format Fuubar --color"
+    return "!bundle exec rspec --drb --format Fuubar"
   else
     return "!ruby"
   endif
@@ -77,8 +77,8 @@ map <Leader>cs :RScontroller
 map <Leader>cv :RVcontroller
 map <Leader>ms :RSmodel
 map <Leader>mv :RVmodel
-map <Leader>ss :AS
-map <Leader>sv :AV
+map <Leader>ss :AS<CR>
+map <Leader>sv :AV<CR>
 map <Leader>t :call RunCurrentTest()<CR>
 map <Leader>vs :RVview
 map <Leader>vv :RSview
@@ -89,6 +89,7 @@ map '; wF's:f'x
 map "; wF"s:f"x
 map ;" F:xcsw"
 map ;' F:xcsw'
+map [] F[xs.wwxx
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Macros
