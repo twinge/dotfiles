@@ -73,15 +73,15 @@ function! CorrectTestRunner()
   endif
 endfunction
 
-map <Leader>cs :RScontroller
-map <Leader>cv :RVcontroller
-map <Leader>ms :RSmodel
-map <Leader>mv :RVmodel
+map <Leader>cs :RScontroller<CR>
+map <Leader>cv :RVcontroller<CR>
+map <Leader>ms :RSmodel<CR>
+map <Leader>mv :RVmodel<CR>
 map <Leader>ss :AS<CR>
 map <Leader>sv :AV<CR>
 map <Leader>t :call RunCurrentTest()<CR>
-map <Leader>vs :RVview
-map <Leader>vv :RSview
+map <Leader>vs :RVview<CR>
+map <Leader>vv :RSview<CR>
 map <Leader>y :call RunCurrentLineInTest()<CR>
 map '' cs"'
 map "" cs'"
@@ -94,4 +94,4 @@ map [] F[xs.wwxx
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Macros
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let @l = 'ilet(:ea)f=xxysE{'
+let @l = 'ilet(:ea)f=xxys${'

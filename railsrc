@@ -7,10 +7,10 @@ rescue LoadError
 end
 
 # Display the RAILS ENV in the prompt
-# ie : [Development]>> 
+# ie : [Development]>>
 IRB.conf[:PROMPT][:CUSTOM] = {
- :PROMPT_N => "[#{ENV["RAILS_ENV"].capitalize}]>> ",
- :PROMPT_I => "[#{ENV["RAILS_ENV"].capitalize}]>> ",
+ :PROMPT_N => "[#{(ENV["RAILS_ENV"] || 'development').capitalize}]>> ",
+ :PROMPT_I => "[#{(ENV["RAILS_ENV"] || 'development').capitalize}]>> ",
  :PROMPT_S => nil,
  :PROMPT_C => "?> ",
  :RETURN => "=> %s\n"
