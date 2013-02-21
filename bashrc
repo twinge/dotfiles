@@ -16,3 +16,5 @@ export PS1='\[\033[0;35m\]\u@\h\[\033[0;33m\] \w\[\033[00m\]$(__parse_git_branch
 if [ -f ~/.localrc ]; then
   source ~/.localrc
 fi
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
