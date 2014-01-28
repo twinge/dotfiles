@@ -122,5 +122,6 @@ alias bi="b install --path vendor --without=production"
 alias bu="b update"
 alias be="b exec"
 alias binit="bi && b package && echo 'vendor/ruby' >> .gitignore"
+alias fr="foreman run"
 
 alias u="be unicorn --config-file config/unicorn.development.rb"
