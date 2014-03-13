@@ -127,3 +127,4 @@ alias z="be zeus"
 alias fr="foreman run"
 
 alias u="be unicorn --config-file config/unicorn.development.rb"
+alias wpdev="ssh josh@wpdev.internal.gcx.org"
