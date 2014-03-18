@@ -1,0 +1,2 @@
+#!/bin/bash
+ssh -l ubuntu -i $HOME/.ssh/$(whoami).pem `instance_ip.rb $1`

@@ -53,7 +53,6 @@ alias highend="ssh 216.115.236.86 -l josh668"
 alias kwik="ssh kwikski.net -l u41884929"
 alias h3d="ssh dev.highend3d.com"
 alias mt="ssh 26am.com -l serveradmin@26am.com"
-alias sa="ssh -l ubuntu -i ~/.ssh/josh.pem"
 
 alias pg="ps ax | grep "
 alias r="rake test:coverage SHOW_ONLY=h,c,m"
@@ -127,4 +126,4 @@ alias z="be zeus"
 alias fr="foreman run"
 
 alias u="be unicorn --config-file config/unicorn.development.rb"
-alias wpdev="ssh josh@wpdev.internal.gcx.org"
+alias wpdev="ssh josh@wpdev1.internal.gcx.org"
