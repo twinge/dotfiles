@@ -5,6 +5,15 @@ require 'aws-sdk'
 
 stack_name = ARGV.shift
 
+stack_name = case stack_name
+when 'prod'
+  'Rails Production - Misc'
+when 'stage'
+  'Rails Staging'
+else
+  stack_name
+end
+
 AWS.config({
   :access_key_id => ENV['AWS_KEY_ID'],
   :secret_access_key => ENV['AWS_SECRET_KEY'],
