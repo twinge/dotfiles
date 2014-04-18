@@ -1,2 +1,2 @@
 #!/bin/bash
-ssh -l ubuntu -i $HOME/.ssh/$(whoami).pem `instance_ip.rb $1`
+ssh -l $AWS_USERNAME `instance_ip.rb $1`
