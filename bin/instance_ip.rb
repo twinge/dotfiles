@@ -4,6 +4,7 @@ require 'rubygems'
 require 'aws-sdk'
 
 stack_name = ARGV.shift
+layer = ARGV.shift || 'rails'
 
 if stack_name.include?('.')
   # ip address
@@ -30,7 +31,7 @@ else
   stack = stacks.detect {|s| s[:name].downcase == stack_name.downcase}
 
   instances = c.describe_instances(stack_id: stack[:stack_id])[:instances]
-  instance = instances.detect {|i| i[:status] == 'online'}
+  instance = instances.detect {|i| i[:status] == 'online' && i[:hostname].include?(layer) }
 
   puts instance[:private_ip]
 end
