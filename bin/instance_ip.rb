@@ -1,37 +1,33 @@
 #!/usr/bin/env ruby
 
 require 'rubygems'
-require 'aws-sdk'
+require 'json'
 
-stack_name = ARGV.shift
-layer = ARGV.shift || 'rails'
+app_name = ARGV.shift
 
-if stack_name.include?('.')
+if app_name.include?('.')
   # ip address
-  puts stack_name
+  puts app_name
 else
-  stack_name = case stack_name
-               when 'prod'
-                 'Rails Production - Misc'
-               when 'stage'
-                 'Rails Staging'
-               else
-                 stack_name
-               end
+  cluster = app_name.include?('stag') ? 'stage' : 'prod'
 
-  AWS.config({
-    :access_key_id => ENV['AWS_KEY_ID'],
-    :secret_access_key => ENV['AWS_SECRET_KEY'],
-  })
+  services = JSON.parse(`aws ecs list-services --cluster #{cluster}`)['serviceArns']
 
-  opsworks = AWS::OpsWorks.new
-  c = opsworks.client
-  stacks = c.describe_stacks[:stacks]
+  service_arn = services.detect { |s| s.include?(app_name) }
 
-  stack = stacks.detect {|s| s[:name].downcase == stack_name.downcase}
+  tasks = JSON.parse(`aws ecs list-tasks --service-name #{service_arn} --cluster #{cluster}`)['taskArns']
 
-  instances = c.describe_instances(stack_id: stack[:stack_id])[:instances]
-  instance = instances.detect {|i| i[:status] == 'online' && i[:hostname].include?(layer) }
+  task_hash = tasks.first.split('/').last
 
-  puts instance[:private_ip]
+  task_desc = JSON.parse(`aws ecs describe-tasks --tasks #{task_hash} --cluster #{cluster}`)
+
+  c_instance_hash = task_desc['tasks'].first['containerInstanceArn'].split('/').last
+
+  c_instances = JSON.parse(`aws ecs describe-container-instances --container-instances #{c_instance_hash} --cluster #{cluster}`)
+
+  instance_id = c_instances['containerInstances'].first['ec2InstanceId']
+
+  instances = JSON.parse(`aws ec2 describe-instances --instance-ids #{instance_id}`)
+
+  puts instances['Reservations'].first['Instances'].first['PrivateIpAddress']
 end
