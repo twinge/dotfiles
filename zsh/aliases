@@ -131,3 +131,4 @@ alias wpdev="ssh josh@wpdev1.internal.gcx.org"
 #AEM
 alias build="mvn install -Pdeploy-felix -Dcq.server=http://localhost:4502"
 alias buildc="mvn clean install -Pdeploy-felix -Dcq.server=http://localhost:4502"
+alias author="cd ~/htdocs/aem-author && java -Xms1024m -Xmx8028m -jar aem-author-4502.jar -gui"
